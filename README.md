@@ -1,17 +1,18 @@
-# Newt Academy Strapi Course
+# Newt Academy Strapi Course Code
 
-Single monorepo for the Newt Academy Strapi 5 course reboot.
+Public code monorepo for the Newt Academy Strapi 5 course.
 
 ## Structure
 
 - `apps/strapi-app`: main Strapi 5 application used in the course.
 - `plugins/course-plugin`: course plugin developed across the lessons.
-- `docs`: durable technical docs and setup notes.
-- `lessons`: lesson resources, notes and support materials.
-- `checkpoints`: lesson checkpoints and reconstruction notes.
 
 ## Rule
 
-The Strapi 5 app and plugin live in this single repo.
+This repository is student-facing and should only contain code, setup instructions and public support notes.
 
-Legacy Strapi v4 sources are not included here. They live in a separate archived reference repo: `newt-build/strapi-v4-course-archive`.
+Course production materials, lesson planning, scripts, prompts and internal notes live in a private production repository.
+
+Legacy Strapi v4 sources are not included here. They live in a separate archived reference repo:
+
+- https://github.com/newt-build/strapi-v4-course-archive
