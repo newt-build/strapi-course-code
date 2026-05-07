@@ -1,0 +1,11 @@
+{
+  "name": "github-showcase",
+  "version": "0.0.0",
+  "private": true,
+  "strapi": {
+    "name": "github-showcase",
+    "displayName": "GitHub Showcase",
+    "description": "Fetch public GitHub repositories and turn them into project documents.",
+    "kind": "plugin"
+  }
+}

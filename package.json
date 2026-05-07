@@ -5,8 +5,21 @@
   "packageManager": "pnpm@10.33.0",
   "scripts": {
     "build": "pnpm -r --if-present build",
+    "build:app": "pnpm --filter strapi-app build",
     "dev": "pnpm -r --parallel --if-present dev",
+    "dev:app": "pnpm --filter strapi-app develop",
     "lint": "pnpm -r --if-present lint",
+    "start:app": "pnpm --filter strapi-app start",
+    "strapi": "pnpm --filter strapi-app strapi",
     "test": "pnpm -r --if-present test"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@swc/core",
+      "better-sqlite3",
+      "core-js-pure",
+      "esbuild",
+      "sharp"
+    ]
   }
 }

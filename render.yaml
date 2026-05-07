@@ -1,0 +1,50 @@
+services:
+  - type: web
+    name: strapi-5-course
+    runtime: node
+    plan: starter
+    buildCommand: corepack enable && corepack prepare pnpm@10.33.0 --activate && pnpm install --frozen-lockfile && pnpm build:app
+    startCommand: corepack enable && corepack prepare pnpm@10.33.0 --activate && pnpm start:app
+    envVars:
+      - key: NODE_VERSION
+        value: 24
+      - key: NODE_ENV
+        value: production
+      - key: STRAPI_TELEMETRY_DISABLED
+        value: "true"
+      - key: DATABASE_CLIENT
+        value: postgres
+      - key: DATABASE_URL
+        fromDatabase:
+          name: strapi-5-course-db
+          property: connectionString
+      - key: DATABASE_SSL
+        value: "true"
+      - key: DATABASE_SSL_REJECT_UNAUTHORIZED
+        value: "false"
+      - key: APP_KEYS
+        generateValue: true
+      - key: API_TOKEN_SALT
+        generateValue: true
+      - key: ADMIN_JWT_SECRET
+        generateValue: true
+      - key: TRANSFER_TOKEN_SALT
+        generateValue: true
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ENCRYPTION_KEY
+        generateValue: true
+      - key: STRAPI_BOOTSTRAP_PERMISSIONS
+        value: "false"
+      - key: STRAPI_BOOTSTRAP_SEED
+        value: "false"
+      - key: GITHUB_SHOWCASE_IMPORT_ON_BOOT
+        value: "false"
+      - key: GITHUB_SHOWCASE_OWNER
+        value: octocat
+      - key: GITHUB_TOKEN
+        sync: false
+
+databases:
+  - name: strapi-5-course-db
+    plan: starter

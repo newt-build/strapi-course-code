@@ -1,0 +1,51 @@
+{
+  "kind": "singleType",
+  "collectionName": "site_settings",
+  "info": {
+    "singularName": "site-setting",
+    "pluralName": "site-settings",
+    "displayName": "Site Settings",
+    "description": "Global configuration for the public developer site"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "siteName": {
+      "type": "string",
+      "required": true,
+      "default": "DevLog CMS"
+    },
+    "tagline": {
+      "type": "string",
+      "maxLength": 140
+    },
+    "githubOwner": {
+      "type": "string",
+      "customField": "global::github-owner",
+      "required": true,
+      "default": "octocat"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "navigationLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "layout.link"
+    },
+    "socialLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.social-link"
+    },
+    "defaultSeo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.metadata"
+    }
+  }
+}
